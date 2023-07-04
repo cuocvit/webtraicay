@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/thanhtoan.css">
+    <link rel="stylesheet" href="/themify-icons/themify-icons.css">
+    <title>Giỏ hàng</title>
+</head>
+<body>
+    <div class="header">
+        <img src="https://downloadlogomienphi.com/sites/default/files/logos/download-logo-vector-fuji-fruit-mien-phi.jpg" alt="ảnh gian hàng hoa quả">
+        <div class="input-container">
+            <input type="text" name="example" autocomplete="off" placeholder="Tìm kiếm sản phẩm...">
+            <button type="submit"><i class="ti-search"></i></button>
+          </div>
+          <a href="/trangchu.html" class="nav">Trang chủ</a>
+          <div id="sp">
+            <a href="#" class="nav">Sản phẩm</a>
+                <ul class="subnav">
+                    <li><a href="#traicaynhapkhau">Trái cây nhập khẩu</a></li>
+                    <li><a href="#traicaynoidia">Trái cây nội địa</a></li>
+                    <li><a href="#nuocep">Nước ép</a></li>
+                    <!-- <li><a href="">Rau củ</a></li> -->
+                </ul>
+            </div>
+          </a>
+          <a href="/gioithieu.html" class="nav">Giới thiệu</a>
+          <a href="" class="nav">Tin tức</a>
+          <a href="/lienhe.html" class="nav">Liên hệ</a>
+          <a href="">Đăng nhập</a>
+    </div>
+    <div class="contain">
+        <table cellspacing="0">
+            <tr>
+                <th>Mặt hàng </th>
+                <th>Giá </th>
+                <th>Số lượng(kg)</th>
+                <th>Thành tiền </th>
+            </tr>
+            <tr>
+                <td>Táo nhập khẩu</td>
+                <td>60.000 VND</td>
+                <td><input id="soluong1" type="number" min="0" onchange="thanhtoan('soluong1','gia1',60000)"></td>
+                <td class="hienthigia" id="gia1"></td>
+            </tr>
+            <tr>
+                <td>Xoài nhập khẩu</td>
+                <td>48.000 VND</td>
+                <td><input id="soluong2" type="number" min="0" onchange="thanhtoan('soluong2','gia2',48000)"></td>
+                <td class="hienthigia" id="gia2"></td>
+            </tr>
+            <tr>
+                <td>Dâu tây Mỹ</td>
+                <td>180.000 VND</td>
+                <td><input id="soluong3" type="number" min="0" onchange="thanhtoan('soluong3','gia3',180000)"></td>
+                <td class="hienthigia" id="gia3"></td>
+            </tr>
+            <tr>
+                <td>Cà chua Australia</td>
+                <td>37.000 VND</td>
+                <td><input id="soluong4" type="number" min="0" onchange="thanhtoan('soluong4','gia4',37000)"></td>
+                <td class="hienthigia" id="gia4"></td>
+            </tr>
+            <tr>
+                <td>Chery USA</td>
+                <td>66.000 VND</td>
+                <td><input id="soluong5" type="number" min="0" onchange="thanhtoan('soluong5','gia5',66000)"></td>
+                <td class="hienthigia" id="gia5"></td>
+            </tr>
+            <tr>
+                <td>Dưa USA</td>
+                <td>96.000 VND</td>
+                <td><input id="soluong6" type="number" min="0" onchange="thanhtoan('soluong6','gia6',96000)"></td>
+                <td class="hienthigia" id="gia6"></td>
+            </tr>
+            <tr>
+                <td>Kiwi</td>
+                <td>72.000 VND</td>
+                <td><input id="soluong7" type="number" min="0" onchange="thanhtoan('soluong7','gia7',72000)"></td>
+                <td class="hienthigia" id="gia7"></td>
+            </tr>
+            <tr>
+                <td >Nho Tím</td>
+                <td>112.000 VND</td>
+                <td><input id="soluong8" type="number" min="0" onchange="thanhtoan('soluong8','gia8',112000)"></td>
+                <td class="hienthigia" id="gia8"></td>
+            </tr>
+            <tr>
+                <td>Vải Thiều</td>
+                <td>60.000 VND</td>
+                <td ><input id="soluong9" type="number" min="0" onchange="thanhtoan('soluong9','gia9',60000)"></td>
+                <td class="hienthigia" id="gia9"></td>
+            </tr>
+            <tr>
+                <td>Hồng xiêm</td>
+                <td>64.000 VND</td>
+                <td><input id="soluong" type="number" min="0" onchange="thanhtoan('soluong','gia',64000)"></td>
+                <td class="hienthigia" id="gia"></td>
+            </tr>
+           <tr>
+            <td>Tổng tiền: </td>
+            <td></td>
+            <td></td>
+            <td><div style="text-align: center;" id="sum"></div></td>
+           </tr>
+        </table>
+        <button id="thanhtoan" type="submit" onclick="tongtien()">Thanh toán</button>
+        <button id="xemtien" type="button" onclick="sum()">Xem tổng tiền</button>
+    </div>
+    <script>
+           function thanhtoan(soluong_id, gia_id, gia_sp) {
+                var soluong = parseInt(document.getElementById(soluong_id).value);
+                var gia = document.getElementById(gia_id);
+                var thanhtien = soluong * gia_sp;
+                gia.innerHTML = thanhtien.toLocaleString() + " VND";
+                }
+                    
+                function tongtien() {
+                    var a = parseInt(document.getElementById('gia1').textContent) || 0 ;                   
+                    var b = parseInt(document.getElementById('gia2').textContent) || 0;                   
+                    var c = parseInt(document.getElementById('gia3').textContent) || 0;
+                    var d = parseInt(document.getElementById('gia4').textContent) || 0;
+                    var e = parseInt(document.getElementById('gia5').textContent) || 0;
+                    var f = parseInt(document.getElementById('gia6').textContent) || 0;
+                    var g = parseInt(document.getElementById('gia7').textContent) || 0;
+                    var h = parseInt(document.getElementById('gia8').textContent) || 0;
+                    var i = parseInt(document.getElementById('gia9').textContent) || 0;
+                    var k = parseInt(document.getElementById('gia').textContent) || 0;
+                    var tong = a + b + c + d + e + f + g + h + i + k;
+                    alert("Bạn phải thanh toán " + tong.toLocaleString() + ".000 VND");
+                }
+                function sum(){
+                    var a = parseInt(document.getElementById('gia1').textContent) || 0 ;                 
+                    var b = parseInt(document.getElementById('gia2').textContent) || 0;                   
+                    var c = parseInt(document.getElementById('gia3').textContent) || 0;
+                    var d = parseInt(document.getElementById('gia4').textContent) || 0;
+                    var e = parseInt(document.getElementById('gia5').textContent) || 0;
+                    var f = parseInt(document.getElementById('gia6').textContent) || 0;
+                    var g = parseInt(document.getElementById('gia7').textContent) || 0;
+                    var h = parseInt(document.getElementById('gia8').textContent) || 0;
+                    var i = parseInt(document.getElementById('gia9').textContent) || 0;
+                    var k = parseInt(document.getElementById('gia').textContent) || 0;
+                    var tong = a + b + c + d + e + f + g + h + i + k;
+                    document.getElementById('sum').innerHTML = tong.toLocaleString() + ".000 VND";
+                }
+    </script>
+    <div class="footer">
+        <img src="https://downloadlogomienphi.com/sites/default/files/logos/download-logo-vector-fuji-fruit-mien-phi.jpg" alt="">
+        <div class="con">
+            <h1>Liên hệ </h1>
+            <p><i class="ti-home"></i> Địa chỉ:111 Quan Hoa - Cầu Giấy - Hà Nội</p>
+            <p><i class="ti-mobile"></i> 0357476358</p>
+            <p><i class="ti-email"></i> letienlongmc2003@gmail.com</p>
+            <p><i class="ti-facebook"></i> https://www.facebook.com/long.huggies.7</p>
+        </div>
+        <div class="con">
+            <h1>Tin Tức</h1>
+            <a href="">Nông dân thảnh thơi nhờ thiết bị thông minh tự "biết" chăm sóc cây</a>
+            <a href="">Tại sao trẻ ăn nhiều hoa quả vẫn béo phì?</a>
+            <a href="">Biết 5 điều này bạn sẽ không lãng phí vỏ của hoa quả</a>
+            <a href="">Thời điểm uống nước cam không tốt cho cơ thể</a>
+        </div>
+        <div class="con">
+            <h1>Về chúng tôi</h1>
+            <ul><li>Giới thiệu</li>
+            <li>Lĩnh vực hoạt động</li>
+            <li>Chính sách chất lượng</li>
+            <li>Năng lực - Cơ sỏ vật chất</li></ul>
+        </div>
+    </div>
+</body>
+</html>

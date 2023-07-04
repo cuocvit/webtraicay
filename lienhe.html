@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ</title>
+    <link rel="stylesheet" href="/lienhe.css">
+    <link rel="stylesheet" href="/themify-icons/themify-icons.css">
+
+</head>
+<body>
+     <div class="header">
+        <img src="https://downloadlogomienphi.com/sites/default/files/logos/download-logo-vector-fuji-fruit-mien-phi.jpg" alt="ảnh gian hàng hoa quả">
+        <div class="input-container">
+            <input type="text" name="example" autocomplete="off" placeholder="Tìm kiếm sản phẩm...">
+            <button type="submit"><i class="ti-search"></i></button>
+          </div>
+          <a href="/trangchu.html" class="nav">Trang chủ</a>
+          <div id="sp">
+            <a href="/traicaynhapkhau.html" class="nav">Sản phẩm</a>
+                <ul class="subnav">
+                    <li><a href="/traicaynhapkhau.html">Trái cây nhập khẩu</a></li>
+                    <li><a href="/traicaynoidia.html">Trái cây nội địa</a></li>
+                    <li><a href="/nuocep.html">Nước ép</a></li>
+                </ul>
+        </div>
+          </a>
+          <a href="/gioithieu.html" class="nav">Giới thiệu</a>
+          <a href="/tintuc.html" class="nav">Tin tức</a>
+          <a href="#" class="nav">Liên hệ</a>
+          <a href="dangnhap.html">Đăng nhập</a>
+    </div>
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12878.765242529786!2d105.79200376301361!3d21.025516713205118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1680545828283!5m2!1svi!2s" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="lienhe">
+        <div class="bio">
+            <h1>Liên hệ với chúng tôi</h1>
+            <h2>Công ty TNHH Trường Thọ - Chi nhánh Hà Nội</h2>
+            <ul>
+                <li>Trụ sở chính: 180 – 182 Lý Chính Thắng, Phường 9, Quận 3, TP Hồ Chí Minh</li>
+                <li>Chi nhánh: Tầng 4, số 01 ngõ 120 Trường Chinh, Thanh Xuân , Hà Nội</li>
+                <li>Hotline: 0986.989.626.</li>
+            </ul>
+            <i class="ti-facebook"></i>
+            <i class="ti-email"></i>
+            <i class="ti-instagram"></i>
+            <i class="ti-linkedin"></i>
+            <i class="ti-youtube"></i>
+        </div> 
+        <div class="form">
+            <h1 class="tieude"> Liên hệ tư vấn khách hàng</h1>
+            <form >
+                <input id="name" type="text" placeholder="Họ tên của bạn" autocomplete="off" required >
+                <div class="error"><span id="error_name"></span></div>
+                <input id="sdt" type="text" placeholder="Nhập số điện thoại của bạn" autocomplete="off" required >
+                <div class="error"><span id="error_phone"></span></div>
+                <textarea id="bio" name=""  cols="30" rows="10" required ></textarea>
+                <button  onclick="hienthi()" type="button">Gửi liên hệ</button>
+            </form>
+        </div>
+        <script>
+            function hienthi(){
+                var name = document.getElementById("name").value;
+                var sdt = document.getElementById("sdt").value;
+                var bio = document.getElementById("bio");
+                let ktloi = false;
+               
+                let regex_name = /^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:\s[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$/;
+                if(regex_name.test(name) ==false){
+                    
+                    document.getElementById('error_name').innerHTML='&emsp; tên nhập sai(Phải viết hoa chữ đầu và chữ phải có nghĩa)&emsp;';
+                    ktloi=true;
+                }else{
+                    document.getElementById('error_name').innerHTML='';
+                    ktloi=false;
+                }
+                
+                let regex_phone = /^(?:0|\+84)[1-9][0-9]{8}$/;
+                if(regex_phone.test(sdt) ==false){
+                    
+                    document.getElementById('error_phone').innerHTML='&emsp; Số điện thoại nhập không đúng&emsp;';
+                    ktloi=true;
+                }else{
+                    document.getElementById('error_phone').innerHTML='';
+                    ktloi=false;
+                }
+                var n = bio.value;
+                if(n ==""){
+                    ktloi=true;
+                }else{
+                    ktloi=false;
+                }
+            if(ktloi==false){
+                alert("Cảm ơn bạn đã liên hệ với chúng tôi! Chúng tôi sẽ cố gắng phản hồi sớm nhất cho bạn!");
+                console.log("Name: " +name);
+                console.log("SDT: " +sdt);
+                console.log("Bio: " +n);
+            }
+            
+        
+            }
+        </script>
+    </div>
+
+    <div class="footer">
+        <img src="https://downloadlogomienphi.com/sites/default/files/logos/download-logo-vector-fuji-fruit-mien-phi.jpg" alt="">
+        <div class="con">
+            <h1>Liên hệ </h1>
+            <p><i class="ti-home"></i> Địa chỉ:111 Quan Hoa - Cầu Giấy - Hà Nội</p>
+            <p><i class="ti-mobile"></i> 0357476358</p>
+            <p><i class="ti-email"></i> letienlongmc2003@gmail.com</p>
+            <p><i class="ti-facebook"></i> https://www.facebook.com/long.huggies.7</p>
+        </div>
+        <div class="con">
+            <h1>Tin Tức</h1>
+            <a href="">Nông dân thảnh thơi nhờ thiết bị thông minh tự "biết" chăm sóc cây</a>
+            <a href="">Tại sao trẻ ăn nhiều hoa quả vẫn béo phì?</a>
+            <a href="">Biết 5 điều này bạn sẽ không lãng phí vỏ của hoa quả</a>
+            <a href="">Thời điểm uống nước cam không tốt cho cơ thể</a>
+        </div>
+        <div class="con">
+            <h1>Về chúng tôi</h1>
+            <ul><li>Giới thiệu</li>
+            <li>Lĩnh vực hoạt động</li>
+            <li>Chính sách chất lượng</li>
+            <li>Năng lực - Cơ sỏ vật chất</li></ul>
+        </div>
+    </div>
+</body>
+</html>

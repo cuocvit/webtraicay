@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/themify-icons/themify-icons.css">
+   <link rel="stylesheet" href="/style.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            scroll-behavior: smooth;
+            
+        }
+        body{
+           position: relative;
+           background-color:rgb(235, 232, 232);
+        }
+        :root {
+            --primary-color: #669933;
+        }
+        .header{
+            height: 100px;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            box-shadow: -10px 10px 10px rgba(66, 64, 64, 0.455);
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            z-index: 2;
+        }
+        .header img{
+            height: 100%;
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            /* padding: 10px; */
+            height: 47px;
+            margin:auto 20px;
+            margin-right: 60px;
+        }
+
+        .input-container input {
+            flex: 1;
+            border: none;
+            height: 36px;
+            outline: none;
+            padding:5px  10px;
+        }
+
+        .input-container button {
+            margin-left: 10px;
+            margin-right: -10px;
+            border-radius: 5px;
+            border: 1px solid rgba(205, 205, 205, 0.728);
+            background-color: var(--primary-color);
+            height: 49px;
+            width: 49px;
+            color: #ffffff;
+            font-size: 24px;
+            line-height: 49px;
+        }
+        .input-container button:hover{
+            background-color: #5c9325;
+            cursor: pointer;
+            color: #ccc;
+        }
+        .header a{
+            margin: auto 10px;
+            text-decoration: none;
+            color: black;
+            padding: 7px;
+            font-size: 20px;
+            height: 30px;
+            /* display: inline-block;
+            position: relative; */
+        }
+        ul{
+            list-style: none;
+        }
+        #sp >a:hover,
+        .header > a:hover{
+            /* display: inline-block; */
+            border-radius: 10px;
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .header .subnav a:hover{
+            border-radius: none;
+            margin: 0;
+            padding: 7px;
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .header #sp{
+            display: inline-block;
+            margin: auto 0px 42px 0px;
+            position: relative;
+        }
+        .header .subnav{
+            display: none;
+            width: 200px ;
+            margin: auto 10px;
+            text-decoration: none;
+            color: black;
+            line-height: 40px;
+            position: absolute;
+            top: 29px;
+            background-color: rgb(255, 250, 250);
+            border: 1px solid var(--primary-color);
+        }
+        .header .subnav a{
+            display: block;
+            margin: auto;
+            border-radius: none;
+        }
+        .header #sp:hover .subnav{
+            display: block;
+        }
+        .img{ 
+            width: 100%;
+            margin-top: 100px;
+            /* background: url(https://tapchicongthuong.vn/images/21/7/16/nguon_cung_hang_hoa_on_dinh.jpg) top center / cover no-repeat; */
+            /* padding-top: 40%; */
+            /* background-repeat: no-repeat; */
+        }
+        .slider{
+            /* background-color: aqua; */
+            width: 100%;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            /* padding-top: 50px; */
+            margin-top: 50px;
+            margin-bottom: 50px;
+           
+        }
+        .boxs{
+            /* background-color: rgb(72, 225, 225); */
+            width: 1200px;
+            height: 200px;
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .box1,.box2,.box3{
+            width: 30%;
+            height: 100%;
+            border-radius: 30px;
+            border:2px solid var(--primary-color);
+            overflow: hidden;
+            transition:2s ease 3s;
+            position: relative;
+        }
+        .box1 img{
+            width: 100%;
+            transform: translate(0, 0); /*tra trên https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate để hiểu về transform translate */
+			transition: transform 1s ease; 
+			transform-origin: center center;
+        }
+        .box2 img{
+            width: 100%;
+            transform: translate(0, 0); /*tra trên https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate để hiểu về transform translate */
+			transition: transform 1s ease; 
+			transform-origin: center center;
+        }
+        .box3 img{
+            width: 100%;
+            transform: translate(0, 0); /*tra trên https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate để hiểu về transform translate */
+			transition: transform 1s ease; 
+			transform-origin: center center;
+        }
+        .boxs img:hover{
+            transform: translate(0, 0) scale(1.2);
+        }
+        .boxs h1{
+            font-size: 35px;
+            font-weight: 500;
+            font-family:Tahoma;
+            color: rgb(255, 255, 255);
+            position: absolute;
+            top: 40%;
+            bottom: 60%;
+            left: 10%;
+            right: 10%;
+            text-align: center;
+        }
+        .sanpham{
+            background-color: rgb(255, 253, 241);
+            width: 100%;
+            height: 770px;
+            display: flex;
+            justify-content: center;
+            flex-flow: column ;
+        }
+        .gioithieu{
+            margin-top: 70px;
+            text-align: center;
+        }
+        .gioithieu h1{
+            font-size:28px;
+            text-transform: uppercase;
+            color: rgb(99, 52, 48);
+            margin-bottom: 10px;
+        }
+        .gioithieu p{
+            font-size: 20px;
+        }
+        .list_items{
+            /* background-color: aquamarine; */
+            width: 60%;
+            height: 350px;
+            margin: 30px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .item{
+            height: 400px;
+            width: 20%;
+            background-color: #ffffff;
+            border-radius: 20px;
+            border: 2px solid var(--primary-color);
+            display: flex;
+            flex-flow: column;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .item .khuyenmai{
+            position: absolute;
+            z-index: 5;
+            background-color: rgb(255, 103, 103);
+            width: 40px;
+            height: 40px;
+            color: #ffffff;
+            margin: 5px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+        }
+        .item img{
+            width: 99%;
+            border-radius: 20px;
+            margin: 0 auto;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        .item p{
+            color: rgb(251, 112, 135);
+        }
+        .gia h4{
+            margin-top: 18px;
+            color: #8d8a8a;
+        }
+        .gia h3{
+            font-size: 24px;
+            color: red;
+        }
+        .item button{
+            margin: 10px auto;
+            width: 130px;
+            height: 40px;
+            color: #ffffff;
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 10px;
+        }
+        .item button:hover{
+            cursor: pointer;
+            box-shadow: 3px 3px 5px 3px rgb(194, 194, 194);
+        }
+        .item:hover{
+            box-shadow: 0px 0px 5px 5px rgb(194, 194, 194);
+            cursor: pointer;
+        }
+        .item:hover img{
+            opacity: 0.8;
+
+        }
+        .sanpham .xemthem{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 40px;
+            margin: 70px auto 0px auto;
+            border-radius: 20px;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background-color: rgb(255, 255, 255);
+            text-decoration: none;
+        }
+        .xemthem:hover{
+            cursor: pointer;
+            background-color: var(--primary-color);
+            color: #ffffff;
+        }
+        .chen_them{
+            height: 400px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .chen_them img{
+            height: 100%;
+            width: 30%;
+        }
+        .tintuc_lienhe{
+            
+            height: 1000px;
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            
+        }
+        .tintuc{
+           
+            flex: 2;
+        }
+        .tieude{
+            margin-top: 30px;
+            text-align: center;
+            font-family:Tahoma;
+            font-size: 24px;
+            font-weight: 600;
+            color: rgb(78, 12, 12);
+        }
+        .lienhe{
+            flex: 1;
+            background-color: #ffffff;
+            margin-top: 30px;
+            height: 500px;
+            margin-left: 20px;
+            border: 1px solid var(--primary-color);
+            border-radius: 30px;
+            box-shadow: 0px 0px 10px var(--primary-color);
+        }
+        .tin{
+            margin-top: 30px;
+            background-color: #ffffff;
+            width: 100%;
+            height: 170px;
+        }
+        .tin img{
+            width: 20%;
+            height: 100%;
+            background-color: #8d8a8a;
+            float: left;
+            margin-right: 20px
+        }
+        .tin h3{
+            padding-top: 15px;
+            color: rgb(226, 49, 226);
+            font-weight: 500;
+            font-size: 18px;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+        .tin .date{
+            color: #ccc;
+            margin-top: 10px;
+        }
+        .tin .content{
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: 200;
+            color: #908f8f;
+        }
+        .tin:hover{
+            cursor: pointer;
+            opacity: 0.9;
+            border: 1px solid var(--primary-color);
+        }
+        .lienhe form{
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            flex-flow: column;
+        }
+        .lienhe form input{
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 10px;
+            outline: none;
+            border: 1px solid var(--primary-color);
+            background-color: antiquewhite;
+        }
+        .lienhe form textarea{
+            margin-top: 10px;
+            border-radius: 10px;
+            outline: none;
+            padding: 10px;
+            border: 1px solid var(--primary-color);
+            resize: none;
+            background-color: antiquewhite;
+        }
+        .lienhe form button{
+            background-color: var(--primary-color);
+            height: 50px;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 30px;
+            border: none;
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .footer{
+            background-color:rgb(117, 117, 117) ;
+            height: 220px;
+            width: 100%;
+            display: flex;
+            justify-content: center;color: #fff;
+        }
+        .footer img{
+            height: 60%;
+            border-radius: 20px;
+            margin-right: 50px;
+            margin-top: auto;
+    margin-bottom: auto;
+        }
+        .footer .con{
+            margin-left: 20px;
+            margin-top: 20px;
+            margin-right: 20px;
+            line-height: 30px;
+            display: flex;
+            flex-direction: column;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+        .footer .con h1{
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        .footer .con a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+        }
+        .footer a:hover{
+            color: var(--primary-color);
+        }
+        .footer li:hover{
+            cursor: pointer;
+        }
+        .footer li{
+            list-style:circle ;
+        }
+    </style>
+    <title>Trang Chủ</title>
+</head>
+<body>
+    <div class="containner" style="width: 100%;">
+    <div class="header">
+        <img src="https://downloadlogomienphi.com/sites/default/files/logos/download-logo-vector-fuji-fruit-mien-phi.jpg" alt="ảnh gian hàng hoa quả">
+        <div class="input-container">
+            <input type="text" name="example" autocomplete="off" placeholder="Tìm kiếm sản phẩm...">
+            <button type="submit"><i class="ti-search"></i></button>
+          </div>
+          <a href="/trangchu.html" class="nav">Trang chủ</a>
+          <div id="sp">
+            <a href="#traicaynhapkhau" class="nav">Sản phẩm</a>
+                <ul class="subnav">
+                    <li><a href="#traicaynhapkhau">Trái cây nhập khẩu</a></li>
+                    <li><a href="#traicaynoidia">Trái cây nội địa</a></li>
+                    <li><a href="#nuocep">Nước ép</a></li>
+                    <!-- <li><a href="">Rau củ</a></li> -->
+                </ul>
+            </div>
+          </a>
+          <a href="/gioithieu.html" class="nav">Giới thiệu</a>
+          <a href="/tintuc.html" class="nav">Tin tức</a>
+          <a href="/lienhe.html" class="nav">Liên hệ</a>
+          <a href="dangnhap.html">Đăng nhập</a>
+    </div>
+    <div class="img">
+        <img style="width: 100%;" src="https://tapchicongthuong.vn/images/21/7/16/nguon_cung_hang_hoa_on_dinh.jpg" alt="">       
+    </div>
+    <div class="slider">
+        <div class="boxs">
+        <div class="box1">
+            <img src="https://img1.kienthucvui.vn/uploads/2019/10/30/anh-chup-rau-cu-qua_112150407.jpg" alt="">
+            <h1> Rau củ sạch</h1>
+        </div>
+        <div class="box2"><img src="https://giadungducsaigon.vn/wp-content/uploads/2022/04/nuoc-ep-trai-cay-de-duoc-bao-lau-4.jpg" alt="">
+        <h1>Thực phẩm sạch</h1></div>
+        <div class="box3"><img src="https://nhaxinhplaza.vn/wp-content/uploads/cach-dang-bai-ban-hoa-qua.jpg" alt=""><h1>Trái cây tươi</h1></div>
+    </div>
+    </div>
+    <div class="sanpham" id="traicaynhapkhau">
+        <div class="gioithieu">
+            <h1>Trái cây nhập khẩu</h1>
+            <p>Phân phối các loại hoa quả nhập khẩu từ các vùng khác nhau</p>
+        </div>
+        <div class="list_items">
+            <div class="item">
+                <div class="khuyenmai">-33%</div>
+                <img src="https://csfood.vn/wp-content/uploads/2019/05/T%C3%A1o-Red-Delicious-Nk-M%E1%BB%B9-t%C3%BAi-1kg.png" alt="">
+                <p>Táo nhập khẩu</p>
+                <div class="gia">
+                    <h4><strike>90.000VND</strike></h4>
+                    <h3>60.000VND</h3>
+                </div>
+               <button onclick="dieu_huong()" onclick="dieu_huong()" class="muangay">Mua Ngay</button>
+            </div>
+            <div class="item">
+                <div class="khuyenmai">-20%</div>
+                <img src="https://hoangphatfruit.com/vnt_upload/product/10_2022/hoang_phat_fruit_5.jpg" alt="">
+                <p>Xoài nhập khẩu</p>
+                <div class="gia">
+                    <h4><strike>60.000VND</strike></h4>
+                    <h3>48.000VND</h3>
+                </div>
+               <button onclick="dieu_huong()" class="muangay">Mua Ngay</button>
+            </div>
+            <div class="item">
+                <div class="khuyenmai">-10%</div>
+                <img src="https://todayfood.vn/product_pictures/pno1572924864.png" alt="">
+                <p>Dâu tây Mỹ</p>
+                <div class="gia">
+                    <h4><strike>200.000VND</strike></h4>
+                    <h3>180.000VND</h3>
+                </div>
+               <button onclick="dieu_huong()" class="muangay">Mua Ngay</button>
+            </div>
+            <div class="item">
+                <div class="khuyenmai">-25%</div>
+                <img src="https://bizweb.dktcdn.net/thumb/grande/100/469/765/products/ca-chua-da-lat-502x502.png" alt="">
+                <p>Cà chua Australia</p>
+                <div class="gia">
+                    <h4><strike>50.000VND</strike></h4>
+                    <h3>37.500VND</h3>
+                </div>
+               <button onclick="dieu_huong()" class="muangay">Mua Ngay</button>
+            </div>
+        </div>
+    <a class="xemthem" href="/traicaynhapkhau.html">Xem thêm</a>
+    </div>
+    <div class="chen_them"><img src="https://static.chotot.com/storage/chotot-kinhnghiem/c2c/2020/10/nhan-vien-cham-soc-rau-cu-quy-mo-lon.jpg" alt="">
+        <img style="height: 100%;" src="https://khothietke.net/wp-content/uploads/2021/04/PNGKhovector.net-02186.png" alt="">
+    <img src="https://agri.vn/wp-content/uploads/2021/01/l%C3%A0m-v%C6%B0%C6%A1n1.png" alt="">
+</div>
+    <div class="sanpham" id="traicaynoidia">
+        <div class="gioithieu">
+            <h1>Trái cây nội địa</h1>
+            <p>Là nhà cung cấp thực phẩm hàng đầu khu vưc miền nam</p>
+        </div>
+        <div class="list_items">
+            <div class="item">
+                <div class="khuyenmai">-33%</div>
+                <img src="https://xingfutangvietnam.com/wp-content/uploads/2021/06/vai.png" alt="">
+                <p>Vải Thiều</p>
+                <div class="gia">
+                    <h4><strike>90.000VND</strike></h4>
+                    <h3>60.000VND</h3>
+                </div>
+               <button onclick="dieu_huong()" class="muangay">Mua Ngay</button>
+            </div>
+            <div class="item">
+                <div class="khuyenmai">-20%</div>
+                <img src="https://product.hstatic.net/200000157781/product/sapoche_a9e50a5de15c444682d189cec07a578e_1024x1024.png" alt="">
+                <p>Hồng xiêm</p>
+                <div class="gia">
+                    <h4><strike>80.000VND</strike></h4>
+                    <h3>64.000VND</h3>
+                </div>
+               <button onclick="dieu_huong()" class="muangay">Mua Ngay</button>
+            </div>
+            <div class="item">
+                <div class="khuyenmai">-5%</div>
+                <img src="https://salt.tikicdn.com/cache/280x280/ts/product/83/ea/7a/0b9497f6eb9dce29c73c20e6fe2ac82a.png" alt="">
+                <p>Dứa</p>
+                <div class="gia">
+                    <h4><strike>30.000VND</strike></h4>
+                    <h3>28.500VND</h3>
+                </div>
+               <button onclick="dieu_huong()" class="muangay">Mua Ngay</button>
+            </div>
+            <div class="item">
+                <div class="khuyenmai">-25%</div>
+                <img src="https://khamkhen.com/public/upload/sanpham/SwvC_qua-chuoi-ta.png" alt="">
+                <p>Chuối Ta</p>
+                <div class="gia">
+                    <h4><strike>50.000VND</strike></h4>
+                    <h3>37.500VND</h3>
+                </div>
+               <button onclick="dieu_huong()" class="muangay">Mua Ngay</button>
+            </div>
+        </div>
+    <a class="xemthem" href="/traicaynoidia.html">Xem thêm</a>
+    </div>
+    <div class="sanpham" id="nuocep" style="background: url(http://hoaqua.langsonweb.com/wp-content/uploads/2020/09/banner-home-1.jpg) top center / cover no-repeat;"id="traicaynoidia">
+        <div class="gioithieu">
+            <h1>Nước ép</h1>
+            <p>Mang lại sự sản khoái khi thưởng thức nước ép tại + Tên cửa hàng </p>
+        </div>
+        <div class="list_items">
+            <div class="item">
+                <img src="https://hc.com.vn/i/ecommerce/media/ckeditor_3197438.jpg" alt="">
+                <p>Nước ép dâu tây</p>
+                <div class="gia">
+                    <h4>&nbsp</h4>
+                    <h3>50.000VND</h3>
+                </div>
+               <button onclick="dieu_huong()" class="muangay">Mua Ngay</button>
+            </div>
+            <div class="item">
+                <img src="https://product.hstatic.net/200000388411/product/f61-nuocep-apple_c1d64b8d1d2f41dfae0f3ba725e4248f_master.png" alt="">
+                <p>Nước ép táo</p>
+                <div class="gia">
+                    <h4>&nbsp</h4>
+                    <h3>40.000VND</h3>
+                </div>
+               <button onclick="dieu_huong()" class="muangay">Mua Ngay</button>
+            </div>
+            <div class="item">
+             
+                <img src="https://salt.tikicdn.com/cache/w1200/ts/product/35/d5/dc/c76ba0145dd473595cbb508448434754.jpg" alt="">
+                <p>Nước ép dưa đỏ</p>
+                <div class="gia">
+                    <h4>&nbsp</h4>
+                    <h3>15.000VND</h3>
+                </div>
+               <button onclick="dieu_huong()" class="muangay">Mua Ngay</button>
+            </div>
+            <div class="item">
+       
+                <img src="https://cf.shopee.vn/file/26c2bdf0dfaa299d70cd47f354d422d6" alt="">
+                <p>Nước ép dứa</p>
+                <div class="gia">
+                    <h4>&nbsp</h4>
+                    <h3>20.00VND</h3>
+                </div>
+               <button onclick="dieu_huong()" class="muangay">Mua Ngay</button>
+            </div>
+        </div>
+    <a class="xemthem" href="/nuocep.html">Xem thêm</a>
+    </div>
+    <div class="tintuc_lienhe">
+        <div class="tintuc">
+            <h1 class="tieude">TIN TỨC</h1>
+            <div class="tin">
+                <img src="https://images.baodantoc.vn/uploads/2021/Th%C3%A1ng%208/Ng%C3%A0y%209/%C3%81nh/cong-nghe-cao-nong-nghiep-15313957656221120265617.jpg" alt="">
+                <h3>Nông dân thảnh thơi nhờ thiết bị thông minh tự "biết" chăm sóc cây</h3>
+                <p class="date">16/09/2021</p>
+                <hr>
+                <p class ="content"> Nhờ sử dụng máy móc hiện đại và trí tuệ nhân tạo, những nông dân trồng mâm xôi đỏ công nghệ cao có thể thảnh thơi chăm sóc trang trại từ xa mà vẫn thu được nguồn trái cây sạch, thơm ngon. </p>
+            </div>
+            <div class="tin">
+                <img src="https://yt.cdnxbvn.com/medias/uploads/150/150312-tre-beo-phi-nen-an-gi.jpg" alt="">
+                <h3>Tại sao trẻ ăn nhiều hoa quả vẫn béo phì?</h3>
+                <p class="date">08/11/2022</p>
+                <hr>
+                <p class ="content">Hoa quả là những loại thực phẩm bổ sung vitamin và khoáng chất rất tốt cho sức khỏe. Tuy nhiên, cho trẻ ăn hoa quả thay cơm không phải là cách giúp con giảm mỡ, thậm chí còn khiến trẻ tăng cân.</p>
+            </div>
+            <div class="tin">
+                <img src="https://icdn.dantri.com.vn/thumb_w/660/2021/10/16/tandungvotraicayhapydy-1634360820055.png" alt="">
+                <h3>Biết 5 điều này bạn sẽ không lãng phí vỏ của hoa quả</h3>
+                <p class="date">21/11/2022</p>
+                <hr>
+                <p class ="content"> Hoa quả rất tốt cho sức khỏe. Thế nhưng không phải ai cũng biết rằng vỏ của một số loại hoa quả cũng chứa nguồn dinh dưỡng dồi dào như vitamin, khoáng chất thiết yếu. Nếu gọt bỏ đi thì rất phí. </p>
+            </div>
+            <div class="tin">
+                <img src="https://suckhoedoisong.qltns.mediacdn.vn/324455921873985536/2022/2/19/cach-lam-nuoc-cam-ep-ngon-va-thom-ket-hop-voi-le-va-gung-5-1645248090817401855254.jpg" alt="">
+                <h3>Thời điểm uống nước cam không tốt cho cơ thể</h3>
+                <p class="date">23/02/2023</p>
+                <hr>
+                <p class ="content">Nước cam mang lại nhiều giá trị cho sức khỏe nhưng phải uống đúng cách như nên uống sau bữa ăn 1-2 giờ, không uống vào buổi tối, không uống khi đói…</p>
+            </div>
+        </div>
+
+        <div class="lienhe" id="lienhe">
+            <h1 class="tieude"> Liên hệ tư vấn khách hàng</h1>
+            <form action="">
+                <input id="name" type="text" placeholder="Họ tên của bạn" required>
+                <div class="error"><span id="error_name"></span></div>
+                <input id="sdt" type="text" placeholder="Nhập số điện thoại của bạn" required>
+                <div class="error"><span id="error_phone"></span></div>
+                <textarea name="" id="bio" cols="40" rows="10" required></textarea>
+                <button type="button" onclick="hienthi()">Gửi liên hệ</button>
+            </form>
+        </div>
+        <script>
+            function hienthi(){
+                var name = document.getElementById("name").value;
+                var sdt = document.getElementById("sdt").value;
+                var bio = document.getElementById("bio");
+                let ktloi = false;
+               
+                let regex_name = /^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:\s[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$/;
+                if(regex_name.test(name) ==false){
+                    
+                    document.getElementById('error_name').innerHTML='&emsp; tên nhập sai(Phải viết hoa chữ đầu và chữ phải có nghĩa)&emsp;';
+                    ktloi=true;
+                }else{
+                    document.getElementById('error_name').innerHTML='';
+                    ktloi=false;
+                }
+                
+                let regex_phone = /^(?:0|\+84)[1-9][0-9]{8}$/;
+                if(regex_phone.test(sdt) ==false){
+                    
+                    document.getElementById('error_phone').innerHTML='&emsp; Số điện thoại nhập không đúng cú pháp &emsp;';
+                    ktloi=true;
+                }else{
+                    document.getElementById('error_phone').innerHTML='';
+                    ktloi=false;
+                }
+                var n = bio.value;
+                if(n ==""){
+                    ktloi=true;
+                }else{
+                    ktloi=false;
+                }
+            if(ktloi===false){
+                alert("Cảm ơn bạn đã liên hệ với chúng tôi! Chúng tôi sẽ cố gắng phản hồi sớm nhất cho bạn!");
+                console.log("Name: " +name);
+                console.log("SDT: " +sdt);
+                console.log("Bio: " +n);
+            }
+            }
+        </script>
+    </div>
+    <div class="footer">
+        <img src="https://downloadlogomienphi.com/sites/default/files/logos/download-logo-vector-fuji-fruit-mien-phi.jpg" alt="">
+        <div class="con">
+            <h1>Liên hệ </h1>
+            <p><i class="ti-home"></i> Địa chỉ:111 Quan Hoa - Cầu Giấy - Hà Nội</p>
+            <p><i class="ti-mobile"></i> 0357476358</p>
+            <p><i class="ti-email"></i> letienlongmc2003@gmail.com</p>
+            <p><i class="ti-facebook"></i> https://www.facebook.com/long.huggies.7</p>
+        </div>
+        <div class="con">
+            <h1>Tin Tức</h1>
+            <a href="">Nông dân thảnh thơi nhờ thiết bị thông minh tự "biết" chăm sóc cây</a>
+            <a href="">Tại sao trẻ ăn nhiều hoa quả vẫn béo phì?</a>
+            <a href="">Biết 5 điều này bạn sẽ không lãng phí vỏ của hoa quả</a>
+            <a href="">Thời điểm uống nước cam không tốt cho cơ thể</a>
+        </div>
+        <div class="con">
+            <h1>Về chúng tôi</h1>
+            <ul><li>Giới thiệu</li>
+            <li>Lĩnh vực hoạt động</li>
+            <li>Chính sách chất lượng</li>
+            <li>Năng lực - Cơ sỏ vật chất</li></ul>
+        </div>
+    </div>
+</div>
+    <script>
+         function dieu_huong(){
+            window.location.href = 'traicaynhapkhau.html';
+        }
+    </script>
+</body>
+</html>

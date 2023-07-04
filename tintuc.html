@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/themify-icons/themify-icons.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+        body{
+           position: relative;
+        }
+        :root {
+            --primary-color: #669933;
+        }
+        .header{
+            height: 100px;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            box-shadow: -10px 10px 10px rgba(66, 64, 64, 0.455);
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            z-index: 2;
+        }
+        .header img{
+            height: 100%;
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            /* padding: 10px; */
+            height: 47px;
+            margin:auto 20px;
+            margin-right: 60px;
+        }
+
+        .input-container input {
+            flex: 1;
+            border: none;
+            height: 36px;
+            outline: none;
+            padding:5px  10px;
+        }
+
+        .input-container button {
+            margin-left: 10px;
+            margin-right: -10px;
+            border-radius: 5px;
+            border: 1px solid rgba(205, 205, 205, 0.728);
+            background-color: var(--primary-color);
+            height: 49px;
+            width: 49px;
+            color: #ffffff;
+            font-size: 24px;
+            line-height: 49px;
+        }
+        .input-container button:hover{
+            background-color: #5c9325;
+            cursor: pointer;
+            color: #ccc;
+        }
+        .header a{
+            margin: auto 10px;
+            text-decoration: none;
+            color: black;
+            padding: 7px;
+            font-size: 20px;
+            height: 30px;
+            /* display: inline-block;
+            position: relative; */
+        }
+        ul{
+            list-style: none;
+        }
+        #sp >a:hover,
+        .header > a:hover{
+            /* display: inline-block; */
+            border-radius: 10px;
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .header .subnav a:hover{
+            border-radius: none;
+            margin: 0;
+            padding: 7px;
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .header #sp{
+            display: inline-block;
+            margin: auto 0px 42px 0px;
+            position: relative;
+        }
+        .header .subnav{
+            display: none;
+            width: 200px ;
+            margin: auto 10px;
+            text-decoration: none;
+            color: black;
+            line-height: 40px;
+            position: absolute;
+            top: 29px;
+            background-color: rgb(255, 250, 250);
+            border: 1px solid var(--primary-color);
+        }
+        .header .subnav a{
+            display: block;
+            margin: auto;
+            border-radius: none;
+        }
+        .header #sp:hover .subnav{
+            display: block;
+        }
+        .content{
+            margin-top: 105px;
+            margin-left: 155px;
+            margin-right: 155px;
+        }
+        .tintuc_lienhe{
+            
+            height: 1000px;
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            
+        }
+        .text{
+            margin-top: 150px;
+        }
+        h1{
+            color: palevioletred;
+            font-family:Arial, Helvetica, sans-serif;
+            margin-bottom: 20px;
+        }
+        .text p{
+            font-size: 20px;
+            font-family: "Roboto", sans-serif;
+        }
+        .tintuc{
+            padding-right: 25px;
+            margin-top: 25px;
+            flex: 2;
+        }
+        .tieude{
+            margin-top: 30px;
+            text-align: center;
+            font-family:Tahoma;
+            font-size: 24px;
+            font-weight: 600;
+            color: rgb(78, 12, 12);
+        }
+        .lienhe{
+            flex: 1;
+            background-color: #ffffff;
+            margin-top: 70px;
+            
+            margin-left: 20px;
+            /* border: 1px solid var(--primary-color); */
+        }
+        .tin{
+            margin-top: 30px;
+            background-color: #ffffff;
+            width: 100%;
+            height: 170px;
+        }
+        .tin img{
+            width: 20%;
+            height: 100%;
+            background-color: #8d8a8a;
+            float: left;
+            margin-right: 20px
+        }
+        .tin h3{
+            padding-top: 15px;
+            color: rgb(226, 49, 226);
+            font-weight: 500;
+            font-size: 18px;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+        .tin .date{
+            color: #ccc;
+            margin-top: 10px;
+        }
+        .tin .content{
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: 200;
+            color: #908f8f;
+        }
+        .tin:hover{
+            cursor: pointer;
+            opacity: 0.9;
+            border: 1px solid var(--primary-color);
+        }
+        .lienhe form{
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            flex-flow: column;
+        }
+        .img_baiviet_first{
+            width: 300px;
+            height: 200px;
+            
+        }
+        .img_baiviet{
+            width: 46px;
+            height: 46px;
+            margin-left: 5px;
+            border-radius: 50%;
+        }
+        
+       .baiviet_lienhe{
+        margin-top: 70px;
+        width: 300px;
+        height: 440px;
+        border: 2px solid var(--primary-color);
+       }
+       .baiviet_lienhe h4{
+        text-align: center;
+        padding: 25px 16px;
+        font-size: 18px;
+        margin-bottom: -20px;
+        color: #ffffff;
+        background-color: #5c9325;
+       }
+       .link_baiviet {
+        display: flex;
+        margin-top: 30px;
+       }
+       .link_baiviet p{
+        margin-top: 7px;
+        margin-left: 15px;
+       }
+       .link_baiviet:hover{
+        cursor: pointer;
+        color: var(--primary-color);
+       }
+       .footer{
+            background-color:rgb(117, 117, 117) ;
+            height: 220px;
+            width: 100%;
+            display: flex;
+            justify-content: center;color: #fff;
+        }
+        .footer img{
+            height: 60%;
+            border-radius: 20px;
+            margin-right: 50px;
+            margin-top: auto;
+			margin-bottom: auto;
+        }
+        .footer .con{
+            margin-left: 20px;
+            margin-top: 20px;
+            margin-right: 20px;
+            line-height: 30px;
+            display: flex;
+            flex-direction: column;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+        .footer .con h1{
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        .footer .con a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+        }
+        .footer a:hover{
+            color: var(--primary-color);
+        }
+        .footer li:hover{
+            cursor: pointer;
+        }
+        .footer li{
+            list-style:circle ;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://downloadlogomienphi.com/sites/default/files/logos/download-logo-vector-fuji-fruit-mien-phi.jpg" alt="ảnh gian hàng hoa quả">
+        <div class="input-container">
+            <input type="text" name="example" autocomplete="off" placeholder="Tìm kiếm sản phẩm...">
+            <button type="submit"><i class="ti-search"></i></button>
+          </div>
+          <a href="/trangchu.html" class="nav">Trang chủ</a>
+          <div id="sp">
+            <a href="traicaynhapkhau.html" class="nav">Sản phẩm</a>
+                <ul class="subnav">
+                    <li><a href="nuocep.html">Nước ép</a></li>
+                    <li><a href="traicaynhapkhau.html">Trái cây nhập khẩu</a></li>
+                    <li><a href="traicaynoidia.html">Trái cây nội địa</a></li>
+                    <!-- <li><a href="">Rau củ</a></li> -->
+                </ul>
+            </div>
+          </a>
+          <a href="/gioithieu.html" class="nav">Giới thiệu</a>
+          <a href="#" class="nav">Tin tức</a>
+          <a href="/lienhe.html" class="nav">Liên hệ</a>
+          <a href="">Đăng nhập</a>
+    </div>
+    <div class="content">
+        <div class="text">
+            <h1>TIN TỨC</h1>
+            <p>
+                Vào tháng 03 hàng năm tại các khu vực miền tây và miền bắc nước ta là thời điểm những trang trại nhãn bắt đầu nở hoa đây cũng là thời điềm những nhà nuôi ong ở các nơi sẽ tiến hành di chuyển đàn ong đến thu hoạch mật ong hoa nhãn. Các chú ong khi được đưa đến đây sẽ làm việc chăm chỉ ngày đêm. Ban ngày đi hút mật đưa về tổ, ban đêm tiến hành luyện mật qua một quá trình dài. Khi mật đủ chín, chủ trại nuôi ong của Hilobee mới tiến hành quay lấy mật. Đặc thù hoa nhãn có hương vị rất đặc trưng và dễ nhận biết.
+            </p>
+        </div>
+        <div class="tintuc_lienhe">
+            <div class="tintuc">
+                <div class="tin" onclick="dieu_huong()">
+                    <img src="https://images.baodantoc.vn/uploads/2021/Th%C3%A1ng%208/Ng%C3%A0y%209/%C3%81nh/cong-nghe-cao-nong-nghiep-15313957656221120265617.jpg" alt="">
+                    <h3>Nông dân thảnh thơi nhờ thiết bị thông minh tự "biết" chăm sóc cây</h3>
+                    <p class="date">16/09/2021</p>
+                    <hr>
+                    <p class ="content"> Nhờ sử dụng máy móc hiện đại và trí tuệ nhân tạo, những nông dân trồng mâm xôi đỏ công nghệ cao có thể thảnh thơi chăm sóc trang trại từ xa mà vẫn thu được nguồn trái cây sạch, thơm ngon. </p>
+                </div>
+                <div class="tin">
+                    <img src="https://yt.cdnxbvn.com/medias/uploads/150/150312-tre-beo-phi-nen-an-gi.jpg" alt="">
+                    <h3>Tại sao trẻ ăn nhiều hoa quả vẫn béo phì?</h3>
+                    <p class="date">08/11/2022</p>
+                    <hr>
+                    <p class ="content">Hoa quả là những loại thực phẩm bổ sung vitamin và khoáng chất rất tốt cho sức khỏe. Tuy nhiên, cho trẻ ăn hoa quả thay cơm không phải là cách giúp con giảm mỡ, thậm chí còn khiến trẻ tăng cân.</p>
+                </div>
+                <div class="tin">
+                    <img src="https://icdn.dantri.com.vn/thumb_w/660/2021/10/16/tandungvotraicayhapydy-1634360820055.png" alt="">
+                    <h3>Biết 5 điều này bạn sẽ không lãng phí vỏ của hoa quả</h3>
+                    <p class="date">21/11/2022</p>
+                    <hr>
+                    <p class ="content"> Hoa quả rất tốt cho sức khỏe. Thế nhưng không phải ai cũng biết rằng vỏ của một số loại hoa quả cũng chứa nguồn dinh dưỡng dồi dào như vitamin, khoáng chất thiết yếu. Nếu gọt bỏ đi thì rất phí. </p>
+                </div>
+                <div class="tin">
+                    <img src="https://suckhoedoisong.qltns.mediacdn.vn/324455921873985536/2022/2/19/cach-lam-nuoc-cam-ep-ngon-va-thom-ket-hop-voi-le-va-gung-5-1645248090817401855254.jpg" alt="">
+                    <h3>Thời điểm uống nước cam không tốt cho cơ thể</h3>
+                    <p class="date">23/02/2023</p>
+                    <hr>
+                    <p class ="content">Nước cam mang lại nhiều giá trị cho sức khỏe nhưng phải uống đúng cách như nên uống sau bữa ăn 1-2 giờ, không uống vào buổi tối, không uống khi đói…</p>
+                </div>
+            </div>
+    
+            <div class="lienhe" id="lienhe">
+                <img class="img_baiviet_first" src="images/img1.jpg" alt="">
+                <div class="baiviet_lienhe">
+                    <h4>BÀI VIẾT-KINH NGHIỆM</h4>
+                    
+                    <div class="link_baiviet">
+                        <img class="img_baiviet" src="https://images.baodantoc.vn/uploads/2021/Th%C3%A1ng%208/Ng%C3%A0y%209/%C3%81nh/cong-nghe-cao-nong-nghiep-15313957656221120265617.jpg" alt="">
+                        <p>Nông dân thảnh thơi nhờ thiết bị thông minh tự "biết" chăm sóc cây</p> 
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="link_baiviet">
+                        <img class="img_baiviet" src="https://yt.cdnxbvn.com/medias/uploads/150/150312-tre-beo-phi-nen-an-gi.jpg" alt="">
+                        <p>Tại sao trẻ ăn nhiều hoa quả vẫn béo phì?</p> 
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="link_baiviet">
+                        <img class="img_baiviet" src="https://icdn.dantri.com.vn/thumb_w/660/2021/10/16/tandungvotraicayhapydy-1634360820055.png" alt="">
+                        <p>Biết 5 điều này bạn sẽ không lãng phí vỏ của hoa quả</p> 
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="link_baiviet">
+                        <img class="img_baiviet" src="https://suckhoedoisong.qltns.mediacdn.vn/324455921873985536/2022/2/19/cach-lam-nuoc-cam-ep-ngon-va-thom-ket-hop-voi-le-va-gung-5-1645248090817401855254.jpg" alt="">
+                        <p>Thời điểm uống nước cam không tốt cho cơ thể</p> 
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+<div class="footer">
+    <img src="https://downloadlogomienphi.com/sites/default/files/logos/download-logo-vector-fuji-fruit-mien-phi.jpg" alt="">
+    <div class="con">
+        <h1>Liên hệ </h1>
+        <p><i class="ti-home"></i> Địa chỉ:111 Quan Hoa - Cầu Giấy - Hà Nội</p>
+        <p><i class="ti-mobile"></i> 0357476358</p>
+        <p><i class="ti-email"></i> letienlongmc2003@gmail.com</p>
+        <p><i class="ti-facebook"></i> https://www.facebook.com/long.huggies.7</p>
+    </div>
+    <div class="con">
+        <h1>Tin Tức</h1>
+        <a href="">Nông dân thảnh thơi nhờ thiết bị thông minh tự "biết" chăm sóc cây</a>
+        <a href="">Tại sao trẻ ăn nhiều hoa quả vẫn béo phì?</a>
+        <a href="">Biết 5 điều này bạn sẽ không lãng phí vỏ của hoa quả</a>
+        <a href="">Thời điểm uống nước cam không tốt cho cơ thể</a>
+    </div>
+    <div class="con">
+        <h1>Về chúng tôi</h1>
+        <ul><li>Giới thiệu</li>
+        <li>Lĩnh vực hoạt động</li>
+        <li>Chính sách chất lượng</li>
+        <li>Năng lực - Cơ sỏ vật chất</li></ul>
+    </div>
+</div>
+</div>
+<script>
+    function dieu_huong(){
+        location.assign("http://webcoban.vn");
+    }
+</script>
+</body>
+</html>

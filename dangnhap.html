@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="/dangnhap.css">
+</head>
+<body>
+    <div class="header">
+        <img src="https://downloadlogomienphi.com/sites/default/files/logos/download-logo-vector-fuji-fruit-mien-phi.jpg" alt="ảnh gian hàng hoa quả">
+        <div class="input-container">
+            <input type="text" name="example" autocomplete="off" placeholder="Tìm kiếm sản phẩm...">
+            <button type="submit"><i class="ti-search"></i></button>
+          </div>
+          <a href="/trangchu.html" class="nav">Trang chủ</a>
+          <div id="sp">
+            <a href="#" class="nav">Sản phẩm</a>
+                <ul class="subnav">
+                    <li><a href="#traicaynhapkhau">Trái cây nhập khẩu</a></li>
+                    <li><a href="#traicaynoidia">Trái cây nội địa</a></li>
+                    <li><a href="#nuocep">Nước ép</a></li>
+                    <!-- <li><a href="">Rau củ</a></li> -->
+                </ul>
+            </div>
+          </a>
+          <a href="/gioithieu.html" class="nav">Giới thiệu</a>
+          <a href="/tintuc.html" class="nav">Tin tức</a>
+          <a href="/lienhe.html" class="nav">Liên hệ</a>
+          <a href="">Đăng nhập</a>
+    </div>
+    <div class="content">
+        <form action="">
+            <h2>ĐĂNG NHẬP</h2>
+            <h4>Tên tài khoản hoặc địa chỉ email</h4>
+            <input id="email" type="text" autocomplete="off" required>
+            <div class="error"><span id="error_name"></span></div>
+            <h4>Mật khẩu</h4>
+            <input id="mk" type="text" autocomplete="off" required>
+            <button type="button" onclick="hienthi()">Đăng nhập</button>
+            <a href="">Quên mật khẩu ?</a>
+        </form>
+    </div>
+    <script>
+        function hienthi(){
+            var email = document.getElementById('email').value;
+            var mk = document.getElementById("mk").value;
+            //let check = flase;
+
+            let regex = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/;
+            if(regex.test(email) ==false){
+                    
+                    document.getElementById('error_name').innerHTML='&emsp; Email không hợp lệ &emsp;';
+                   check=true;
+            }else{
+                    document.getElementById('error_name').innerHTML='';
+                    check=false;
+                    if(mk==''){
+                        check = true;console.log(1);
+                    }else{
+                        check = false;
+                        console.log(2);
+                    }
+                }
+            if(check == false){
+                alert("Log in succession");
+            }
+        }
+    </script>
+    <div class="footer">
+        <img src="https://downloadlogomienphi.com/sites/default/files/logos/download-logo-vector-fuji-fruit-mien-phi.jpg" alt="">
+        <div class="con">
+            <h1>Liên hệ </h1>
+            <p><i class="ti-home"></i> Địa chỉ:111 Quan Hoa - Cầu Giấy - Hà Nội</p>
+            <p><i class="ti-mobile"></i> 0357476358</p>
+            <p><i class="ti-email"></i> letienlongmc2003@gmail.com</p>
+            <p><i class="ti-facebook"></i> https://www.facebook.com/long.huggies.7</p>
+        </div>
+        <div class="con">
+            <h1>Tin Tức</h1>
+            <a href="">Nông dân thảnh thơi nhờ thiết bị thông minh tự "biết" chăm sóc cây</a>
+            <a href="">Tại sao trẻ ăn nhiều hoa quả vẫn béo phì?</a>
+            <a href="">Biết 5 điều này bạn sẽ không lãng phí vỏ của hoa quả</a>
+            <a href="">Thời điểm uống nước cam không tốt cho cơ thể</a>
+        </div>
+        <div class="con">
+            <h1>Về chúng tôi</h1>
+            <ul><li>Giới thiệu</li>
+            <li>Lĩnh vực hoạt động</li>
+            <li>Chính sách chất lượng</li>
+            <li>Năng lực - Cơ sỏ vật chất</li></ul>
+        </div>
+    </div>
+</body>
+</html>

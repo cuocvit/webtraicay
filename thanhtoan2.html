@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="/thanhtoan2.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <img src="https://downloadlogomienphi.com/sites/default/files/logos/download-logo-vector-fuji-fruit-mien-phi.jpg" alt="ảnh gian hàng hoa quả">
+        <div class="input-container">
+            <input type="text" name="example" autocomplete="off" placeholder="Tìm kiếm sản phẩm...">
+            <button type="submit"><i class="ti-search"></i></button>
+          </div>
+          <a href="/trangchu.html" class="nav">Trang chủ</a>
+          <div id="sp">
+            <a href="#" class="nav">Sản phẩm</a>
+                <ul class="subnav">
+                    <li><a href="traicaynhapkhau.html">Trái cây nhập khẩu</a></li>
+                    <li><a href="traicaynoidia.html">Trái cây nội địa</a></li>
+                    <li><a href="nuocep.html">Nước ép</a></li>
+                    <!-- <li><a href="">Rau củ</a></li> -->
+                </ul>
+            </div>
+          </a>
+          <a href="/gioithieu.html" class="nav">Giới thiệu</a>
+          <a href="/tintuc.html" class="nav">Tin tức</a>
+          <a href="/lienhe.html" class="nav">Liên hệ</a>
+          <a href="">Đăng nhập</a>
+    </div>
+    <div class="content">
+        <h2>Thông tin khách hàng</h2>
+        <form action="">
+            <form action="">
+                <h4>Họ tên: </h4>
+                <input id="name" type="text" autocomplete="off" required>
+                <div class="error"><span id="error_name"></span></div>
+                <h4>Giới tính: </h4>
+                <input type="radio" name="Account" id="Acc" value="Nam">Nam
+                <br>
+                <input type="radio" name="Account" id="Acc" value="Nu">Nữ
+                <h4>Địa chỉ: </h4>
+                <input id="dc" type="text" autocomplete="off" required>
+                <h4>Điện thoại: </h4>
+                <input id="dt" type="text" autocomplete="off" required>
+                <h4>Email: </h4>
+                <input id="email" type="text" autocomplete="off" required>
+                <h4>Căn cước công dân: </h4>
+                <input id="cccd" type="text" autocomplete="off" required>
+                <h4>Hình thức thanh toán: </h4>
+                <select id="thanhtoan">
+                    <option value="One">Bằng thẻ</option>
+                    <option value="Two">Bằng tiền mặt</option>
+                    <option value="Three">Ship CCD</option>
+                </select>
+                <button style="display: flex;" type="button" onclick="dangnhap()">Thanh Toán</button>
+            </form>
+        </form>
+    </div>
+    <script>
+        var thongtin={
+            name : "",
+            gt:"",
+            dc:"",
+            dt:"",
+            email:"",
+            cccd:"",
+            thanhtoan:"",
+            
+        }
+        function dangnhap(){
+            var name= document.getElementById('name');
+            thongtin.name =name.value
+            const gt = document.getElementsByName("Account");
+            for (let i = 0; i < gt.length; i++) {
+                const checkbox = gt[i];
+                if (checkbox.checked) {
+                 thongtin.gt=checkbox.value;
+                }
+            }
+            var dc= document.getElementById('dc');
+            thongtin.dc =dc.value;
+            thongtin.dt = document.getElementById('dt').value;
+            thongtin.email = document.getElementById('email').value;
+            
+            thongtin.cccd = document.getElementById('cccd').value;
+            
+            
+            
+            thongtin.epu = document.getElementById('thanhtoan').value;
+        
+
+
+            console.log(thongtin);
+            
+        }
+    </script>
+    <div class="footer">
+        <img src="https://downloadlogomienphi.com/sites/default/files/logos/download-logo-vector-fuji-fruit-mien-phi.jpg" alt="">
+        <div class="con">
+            <h1>Liên hệ </h1>
+            <p><i class="ti-home"></i> Địa chỉ:111 Quan Hoa - Cầu Giấy - Hà Nội</p>
+            <p><i class="ti-mobile"></i> 0357476358</p>
+            <p><i class="ti-email"></i> letienlongmc2003@gmail.com</p>
+            <p><i class="ti-facebook"></i> https://www.facebook.com/long.huggies.7</p>
+        </div>
+        <div class="con">
+            <h1>Tin Tức</h1>
+            <a href="">Nông dân thảnh thơi nhờ thiết bị thông minh tự "biết" chăm sóc cây</a>
+            <a href="">Tại sao trẻ ăn nhiều hoa quả vẫn béo phì?</a>
+            <a href="">Biết 5 điều này bạn sẽ không lãng phí vỏ của hoa quả</a>
+            <a href="">Thời điểm uống nước cam không tốt cho cơ thể</a>
+        </div>
+        <div class="con">
+            <h1>Về chúng tôi</h1>
+            <ul><li>Giới thiệu</li>
+            <li>Lĩnh vực hoạt động</li>
+            <li>Chính sách chất lượng</li>
+            <li>Năng lực - Cơ sỏ vật chất</li></ul>
+        </div>
+    </div>
+</body>
+</html>
